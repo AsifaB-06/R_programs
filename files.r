@@ -1,0 +1,22 @@
+sam_data <- read.csv("D:/R programming/SAM1.csv", header = TRUE, stringsAsFactors = FALSE)
+# or use readr library - read_csv function
+install.packages("readr")
+library(readr)
+sam_data <- read_csv("D:/R programming/SAM1.csv")
+# or use data.table library - fread function
+install.packages("data.table")
+library(data.table)
+sam_data <- fread("D:/R programming/SAM1.csv", header = TRUE, stringsAsFactors = FALSE)
+# After importing/reading the file, program starts from here
+print("First few rows of the dataset:")
+print(head(sam_data))
+print("Structure of the dataset:")
+print(str(sam_data))
+print("Summary statistics of the dataset:")
+print(summary(sam_data))
+print("Number of missing values in each column:")
+print(colSums(is.na(sam_data)))
+print("Column names in the dataset:")
+print(names(sam_data))
+print("Number of rows and columns:")
+print(dim(sam_data))
